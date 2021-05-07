@@ -31,20 +31,10 @@ nexmo number:buy 447700900001
 
 ### Create a Voice API application
 
-Use the CLI to create a Voice API application with the webhooks that will be responsible for answering a call on your Nexmo number (`/webhooks/answer`) and logging call events (`/webhooks/event`), respectively. Replace `example.com` in the following command with your own public-facing URL host name (consider using [ngrok](https://ngrok.io) for testing purposes, and if you do use it, run it now to get the temporary URLs that `ngrok` provides):
+Use the conversation-api-function tool to create an application and link the LVN above
 
 ```
-nexmo app:create "My Echo Server" https://example.com/webhooks/answer https://example.com/webhooks/event
-```
-
-Make a note of the application ID returned by this command.
-
-### Link the Voice API application to your Nexmo number
-
-Use the application ID to link your virtual number:
-
-```
-nexmo link:app <NUMBER> <APPLICATION_ID>
+conversation-api-function config-new -a <API_KEY> -s <API_SECRET> -l <LVN>
 ```
 
 ### Install dependencies
@@ -52,19 +42,18 @@ nexmo link:app <NUMBER> <APPLICATION_ID>
 Run the following to install the required modules:
 
 ```
-npm install express body-parser express-ws
+nvm use
+npm i
 ```
 
-### Run it!
+### Run it
 
 1. Execute the following in your project directory:
 
   ```
-  node server.js
+  npm start
   ```
 
 2. Call your Nexmo virtual number and listen to the welcome message.
 
 3. Speak into the phone and hear your voice echoed back to you by the websocket.
-
-
