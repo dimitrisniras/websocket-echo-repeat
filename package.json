@@ -1,0 +1,24 @@
+{
+  "name": "websocket-echo-repeat",
+  "version": "1.0.0",
+  "description": "Simple Vonage Voice API demo that connects to a websocket endpoint and echoes audio back to caller",
+  "main": "index.js",
+  "scripts": {
+    "start": "conversation-api-function run ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimitrisniras/websocket-echo-repeat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimitrisniras/websocket-echo-repeat/issues"
+  },
+  "homepage": "https://github.com/dimitrisniras/websocket-echo-repeat#readme",
+  "dependencies": {
+    "conversation-api-function": "git@github.com:jurgob/conversation-api-function.git",
+    "express-ws": "^4.0.0",
+    "ws": "^7.4.5"
+  }
+}
